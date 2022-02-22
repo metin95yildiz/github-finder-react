@@ -103,7 +103,7 @@ export default function Profile() {
         )
     } else {
         return (
-            <div>
+            <div className="info">
                     <p>
                         Please enter a Github username for finding user you're looking for...
                     </p>

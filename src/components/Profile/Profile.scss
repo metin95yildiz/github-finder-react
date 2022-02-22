@@ -35,6 +35,13 @@
     border: 1px solid index.$text-color;
     @include index.animate(viewLinkChange, 1s, linear, infinite, alternate);
 }
+%message-shared {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: index.$info-color;
+    border-radius: 1rem;
+    justify-self: center;
+}
 
 .profile {
     margin-top: 4rem;
@@ -151,6 +158,13 @@
         }
         
     }
+}
+.info {
+    @extend %message-shared;
+}
+.error {
+    @extend %message-shared;
+    background-color: index.$error-color;
 }
 @media(min-width: 35rem) {
         .latest-repos {
