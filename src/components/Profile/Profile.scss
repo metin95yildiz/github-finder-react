@@ -36,9 +36,9 @@
     @include index.animate(viewLinkChange, 1s, linear, infinite, alternate);
 }
 
-section {
+.profile {
     margin-top: 4rem;
-    padding: 0.2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     @extend %border-shared;
@@ -47,13 +47,14 @@ section {
     min-width: max-content;
     .user-info {
         display: flex;
-        padding: 2rem;
+        flex-direction: column;
         min-width: max-content;
-        align-self: flex-start;
-        width: 35vw;
+        width: 100%;
+        justify-content: space-around;
         .avatar {
             display: flex;
             flex-direction: column;
+            margin-bottom: 2rem;
             .avatar-frame {
                 display: inline-block;
                 @extend %border-shared;
@@ -63,6 +64,7 @@ section {
                 width: calc(270px - 52px);
                 height: calc(270px - 52px);
                 margin-bottom: 1rem;
+                align-self: center;
                 img {
                     border: 0;
                     margin: 0;
@@ -80,8 +82,9 @@ section {
             justify-content: space-between;
             @extend %border-shared;
             border-width: 3px;
-            margin-left: 1rem;
             padding: 0.4rem;
+            align-items: center;
+            margin-bottom: 2rem;
             .repo-count, .gist-count,
             .follower-count, .following-count {
                 display: flex;
@@ -92,9 +95,12 @@ section {
             }
         }
         .info-list {
+            margin: 0;
             padding: 0.4rem;
             @extend %border-shared;
-            border-width: 2px;
+            border-width: 3px;
+            min-width: 35%;
+            margin-bottom: 2rem;
             list-style: none;
             text-align: start;
         }
@@ -103,12 +109,12 @@ section {
         display: flex;
         flex-direction: column;
         align-content: space-between;
-        padding: 2rem;
+        padding: 1rem;
         margin: 1rem;
         @extend %border-shared;
-        border-width: 2px;
+        border-width: 3px;
         min-width: max-content;
-        width: 90%;
+        width: 95%;
         .repo-card {
             display: flex;
             flex-direction: column;
@@ -116,10 +122,10 @@ section {
             color: index.$text-color;
             border-radius: 1rem;
             min-width: 22rem;
-            width: 35vw;
-            height: 4rem;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
+            width: 100%;
+            min-height: 4rem;
+            margin-top: 0.7rem;
+            margin-bottom: 0.7rem;
             .repo-name {
                 display: flex;
                 flex-direction: row;
@@ -130,12 +136,43 @@ section {
                 .view-link {
                     @extend %view-link-shared;
                     height: max-content;
-                    width: 6rem;
+                    min-width: 6rem;
+                    margin-right: 1rem;
                 }
             }
             .repo-counts {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
+                span {
+                    margin-left: 1.5rem;
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+        
+    }
+}
+@media(min-width: 35rem) {
+        .latest-repos {
+            .repo-card {
+                font-size: 1.3rem;
+                .repo-name {
+
+                    .view-link {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
+                }
+            }
+        }
+}
+
+@media(min-width: 78rem) {
+    .profile {
+        .user-info {
+            flex-direction: row;
+            .counts, .info-list {
+                font-size: 1.2rem;
             }
         }
     }
