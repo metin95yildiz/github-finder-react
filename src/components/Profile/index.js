@@ -96,9 +96,11 @@ export default function Profile() {
         </section>
         )
     } else if (error) {
+        return (
         <div className="error">
             <p>{error}</p>
         </div>
+        )
     } else {
         return (
             <div>
