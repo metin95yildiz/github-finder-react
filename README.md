@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# github-finder-react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is simple Github user finder app. It is searching for a Github user by username. [Github REST API](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api) was used for finding a github user by username.
+
+## Used Dependencies
+
+* React
+* Redux
+* Redux-saga
+* Sass
+* Axios
 
 ## Available Scripts
 
