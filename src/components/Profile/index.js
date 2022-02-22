@@ -15,13 +15,13 @@ export default function Profile() {
                         <div className="avatar-frame">
                             <img
                             className="img"
-                            src={profile.user.avatar_url}
+                            src={user.avatar_url}
                             alt="avatar"
                             />
                         </div>
                         <a
                         className="view-link"
-                        href={profile}
+                        href={user.html_url}
                         target="_blank"
                         rel="noreferrer"
                         >
