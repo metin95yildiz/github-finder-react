@@ -26,6 +26,6 @@ export function * searchUser() {
             error: "The user you're looking for was not found..."
         })
     } finally {
-        spawn(searchUser);
+        yield spawn(searchUser);
     }
 }

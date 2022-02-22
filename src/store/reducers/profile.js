@@ -16,7 +16,7 @@ export default function profile(state = initial, action) {
             user: action.user,
             repos: action.repos
         };
-        case FAIL_SEARCH_USER: return { ...state, error: action.error };
+        case FAIL_SEARCH_USER: return { user: "", repos: "", error: action.error };
         default: return state;
         }
 }
