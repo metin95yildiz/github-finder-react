@@ -1,3 +1,8 @@
+$bg-color: rgb(129, 255, 56);
+$alt-bg-color: rgb(58, 196, 196);
+$text-color: rgb(77, 77, 77);
+$alt-text-color: rgb(218, 218, 218);
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -7,4 +12,16 @@ body {
 
 .App {
   text-align: center;
+}
+h1 {
+  font-size: 3rem;
+}
+
+@mixin animate($animation, $duration, $method, $times, $direction) {
+  animation: $animation $duration $method $times $direction
+}
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+      @content
+  }
 }
