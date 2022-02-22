@@ -1,0 +1,38 @@
+@use "../../index.scss";
+
+@include index.keyframes(colorChange){
+    0% {
+        background-color: index.$bg-color;
+    }
+    100% {
+        background-color: index.$alt-bg-color;
+    }
+}
+
+form {
+    width: max-content;
+    padding: 1rem;
+    background-color: index.$bg-color;
+    border-radius: 1rem;
+    @include index.animate(colorChange, 1s, linear, infinite, alternate);
+    .search {
+        font-size: 1.2rem;
+        height: 2rem;
+        border-color: index.$alt-bg-color;
+        border-radius: 1rem 0 0 1rem;
+        padding-left: 0.5rem;
+    }
+    .submit {
+        font-size: 1.2rem;
+        height: 2rem;
+        border-radius: 0 1rem 1rem 0;
+        background-color: index.$alt-bg-color;
+        border-color: index.$alt-bg-color;
+        transition: opacity 0.3s;
+        cursor: pointer;
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}
