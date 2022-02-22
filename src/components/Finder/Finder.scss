@@ -14,6 +14,7 @@ form {
     padding: 1rem;
     background-color: index.$bg-color;
     border-radius: 1rem;
+    justify-self: center;
     @include index.animate(colorChange, 1s, linear, infinite, alternate);
     .search {
         font-size: 1.2rem;

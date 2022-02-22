@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Finder from "./components/Finder";
+import Profile from "./components/Profile";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Github Finder</h1>
+        <p>Enter a username you're looking for...</p>
       </header>
+      <div className="content">
+        <Finder />
+        <Profile />
+      </div>
     </div>
   );
 }
