@@ -1,0 +1,142 @@
+@use "../../index.scss";
+
+@include index.keyframes(borderColorChange){
+    0% {
+        border-color: index.$bg-color;
+    }
+    100% {
+        border-color: index.$alt-bg-color;
+    }
+}
+
+@include index.keyframes(viewLinkChange){
+    0% {
+        background-color: index.$bg-color;
+        color: index.$text-color;
+    }
+    100% {
+        background-color: index.$alt-bg-color;
+        color: index.$alt-text-color;
+    }
+}
+
+%border-shared {
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 1rem;
+    @include index.animate(borderColorChange, 1s, linear, infinite, alternate);
+}
+%view-link-shared {
+    display: grid;
+    align-items: center;
+    border-radius: 1rem;
+    text-decoration: none;
+    height: 2rem;
+    border: 1px solid index.$text-color;
+    @include index.animate(viewLinkChange, 1s, linear, infinite, alternate);
+}
+
+section {
+    margin-top: 4rem;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    @extend %border-shared;
+    text-align: center;
+    align-items: center;
+    min-width: max-content;
+    .user-info {
+        display: flex;
+        padding: 2rem;
+        min-width: max-content;
+        align-self: flex-start;
+        width: 35vw;
+        .avatar {
+            display: flex;
+            flex-direction: column;
+            .avatar-frame {
+                display: inline-block;
+                @extend %border-shared;
+                border-radius: 100%;
+                border-width: 3px;
+                overflow: hidden;
+                width: calc(270px - 52px);
+                height: calc(270px - 52px);
+                margin-bottom: 1rem;
+                img {
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    width: calc(270px - 52px);
+                    height: calc(270px - 52px);
+                }
+            }
+            .view-link {
+                @extend %view-link-shared;
+            }
+        }
+        .counts {
+            display: flex;
+            justify-content: space-between;
+            @extend %border-shared;
+            border-width: 3px;
+            margin-left: 1rem;
+            padding: 0.4rem;
+            .repo-count, .gist-count,
+            .follower-count, .following-count {
+                display: flex;
+                flex-direction: column;
+                white-space: nowrap;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+        }
+        .info-list {
+            padding: 0.4rem;
+            @extend %border-shared;
+            border-width: 2px;
+            list-style: none;
+            text-align: start;
+        }
+    }
+    .latest-repos {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        padding: 2rem;
+        margin: 1rem;
+        @extend %border-shared;
+        border-width: 2px;
+        min-width: max-content;
+        width: 90%;
+        .repo-card {
+            display: flex;
+            flex-direction: column;
+            background-color: index.$bg-color;
+            color: index.$text-color;
+            border-radius: 1rem;
+            min-width: 22rem;
+            width: 35vw;
+            height: 4rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            .repo-name {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0.5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                .view-link {
+                    @extend %view-link-shared;
+                    height: max-content;
+                    width: 6rem;
+                }
+            }
+            .repo-counts {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+}
