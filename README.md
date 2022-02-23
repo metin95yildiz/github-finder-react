@@ -9,6 +9,7 @@ This is simple Github user finder app. It is searching for a Github user by user
 * Redux-saga
 * Sass
 * Axios
+* React-time-ago
 
 ## Available Scripts
 
