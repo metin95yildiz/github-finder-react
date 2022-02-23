@@ -5,8 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from "./store";
 import { Provider } from "react-redux";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
 
 const store = configureStore();
+
+TimeAgo.addDefaultLocale(en);
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "./Profile.scss";
+import ReactTimeAgo from "react-time-ago";
 
 export default function Profile() {
     const profile = useSelector((state) => state.profile);
@@ -63,7 +64,7 @@ export default function Profile() {
                     {
                         Object.values(repos).map(repo => {
                             return (
-                            <div className="repo-card">
+                            <div className="repo-card" key={repo.id}>
                                 <div className="repo-name">
                                     <label>{repo.name}</label>
                                     <a
@@ -74,6 +75,9 @@ export default function Profile() {
                                     >
                                         View Repo
                                     </a>
+                                </div>
+                                <div className="last-update">
+                                    <span>Updated: <ReactTimeAgo date={repo.updated_at} locale="en-US" /></span>
                                 </div>
                                 <div className="repo-counts">
                                     <span>Stars: {repo.stargazers_count}</span>
