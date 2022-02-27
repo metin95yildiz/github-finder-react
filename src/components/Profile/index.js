@@ -2,9 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./Profile.scss";
 import ReactTimeAgo from "react-time-ago";
+import { profileDataMemo } from "../../store/selectors";
 
 export default function Profile() {
-    const profile = useSelector((state) => state.profile);
+    const profile = useSelector(profileDataMemo);
     const user = profile.user;
     const repos = profile.repos;
     const error = profile.error;
@@ -77,7 +78,7 @@ export default function Profile() {
                                     </a>
                                 </div>
                                 <div className="last-update">
-                                    <span>Updated: <ReactTimeAgo date={repo.updated_at} locale="en-US" /></span>
+                                    <span>Updated: <ReactTimeAgo date={new Date(repo.updated_at)} locale="en-US" /></span>
                                 </div>
                                 <div className="repo-counts">
                                     <span>Stars: {repo.stargazers_count}</span>
