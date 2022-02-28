@@ -12,6 +12,10 @@ This is simple Github user finder app. It is searching for a Github user by user
 * Axios
 * React-time-ago
 
+## Demo
+
+You can reach demo from here: [https://github-finder-react-eta.vercel.app/](https://github-finder-react-eta.vercel.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
